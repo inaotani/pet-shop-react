@@ -1,23 +1,23 @@
 #footer {
-    background-color: #8643f3;
-    padding: 20px 0;
+  background-color: #8643f3;
+  padding: 20px 0;
 }
 
 #footer p {
-    color: #fff;
-    text-align: center;
-    margin: 0;
+  color: #fff;
+  text-align: center;
+  margin: 0;
 }
 
 #footer img {
-    max-height: 15px;
-    margin: 0 2px;
-    position: relative;
-    top: 2px;
+  max-height: 15px;
+  margin: 0 2px;
+  position: relative;
+  top: 2px;
 }
 
-@media (min-width: 1024px){
-    #footer img {
-        max-height: 20px;
-    }
+@media (min-width: 1024px) {
+  #footer img {
+    max-height: 20px;
+  }
 }
