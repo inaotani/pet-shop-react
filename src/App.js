@@ -1,16 +1,15 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Grid from "./components/Grid";
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import Login from './pages/Login';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <main className="container">
-        <Grid />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Homepage} />
+        <Route path="/login" component={Login} />
+      </Switch>
+    </Router>
   );
 }
 

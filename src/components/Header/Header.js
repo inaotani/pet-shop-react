@@ -1,30 +1,36 @@
-import React from "react";
-import Style from "./style.css";
+import React from 'react';
+import Style from './style.css';
+import { useState } from 'react';
+import menuIcon from './../../assets/icons/menu-icon.svg';
+import cartIcon from './../../assets/icons/cart.svg';
 
-const Header = () => {
+const Header = ({menuList}) => {
+  const [menuOpen, setmenuOpen] = useState(false);
+
+  function openMenu() {
+    setmenuOpen(!menuOpen);
+  }
+
   return (
     <header id="header">
       <div className="container">
-        <nav id="nav-menu">
+        <nav id="nav-menu" className={menuOpen ? 'open' : ''}>
           <ul>
-            <li>
-              <a href="#">Home</a>
+          {menuList.map((menuItem, index) =>
+            <li key={index}>
+                <a href={menuItem.link}>
+                    {menuItem.text}
+                </a>
             </li>
-            <li>
-              <a href="#">Rações</a>
-            </li>
-            <li>
-              <a href="#">Brinquedos</a>
-            </li>
-            <li>
-              <a href="#">Higiene</a>
-            </li>
-            <li>
-              <a href="#">Login</a>
-            </li>
+          )}
           </ul>
         </nav>
+
+        <img className="icon" src={menuIcon} alt="Menu hamburguer" onClick={openMenu} />
+        
         <h1 className="site-title">Pet Shop</h1>
+
+        <a href="#"><img className="icon" src={cartIcon} /></a>
       </div>
     </header>
   );

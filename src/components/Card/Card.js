@@ -1,15 +1,14 @@
 import React from "react";
 import Style from "./style.css";
-import imgProduct from "../../assets/imgs/produto1.png";
 import Btn from "../Btn";
 
-const Card = () => {
+const Card = ({card}) => {
   return (
     <div className="product">
-      <img classNameName="product-img" src={imgProduct} />
+      <img className="product-img" src={card.img} />
       <div className="product-info">
-        <h3 className="product-name">Royal Canin - Adulto - 15kg</h3>
-        <p className="product-price">R$ 235,99</p>
+        <h3 className="product-name">{card.title}</h3>
+        <p className="product-price">R$ {card.price}</p>
         <Btn />
       </div>
     </div>

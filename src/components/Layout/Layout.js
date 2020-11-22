@@ -1,0 +1,23 @@
+import React from 'react';
+import Style from './style.css';
+import Header from './../Header';
+import Footer from './../Footer';
+
+const Layout = ({children}) => {
+    return (
+        <>
+            <Header menuList={[
+            { link: "/", text: 'Página Inicial' },
+            { link: "#", text: 'Rações' },
+            { link: "/login", text: 'Login' },
+            ]} />
+
+            <main className='container'>
+                {children}
+            </main>
+            <Footer />
+        </>
+    );
+};
+
+export default Layout;
