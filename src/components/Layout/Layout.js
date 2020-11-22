@@ -8,11 +8,11 @@ const Layout = ({children}) => {
         <>
             <Header menuList={[
             { link: "/", text: 'Página Inicial' },
-            { link: "#", text: 'Rações' },
+            { link: "/racoes", text: 'Rações' },
             { link: "/login", text: 'Login' },
             ]} />
 
-            <main className='container'>
+            <main>
                 {children}
             </main>
             <Footer />

@@ -1,11 +1,13 @@
 import React from "react";
 import Style from "./style.css";
 
-const Btn = () => {
+const Btn = ({link, children}) => {
   return (
-    <a href="#" className="product-btn">
-      Comprar
+    <>
+    <a href={link} className="product-btn">
+      {children}
     </a>
+    </>
   );
 };
 
