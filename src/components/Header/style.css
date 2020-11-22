@@ -49,6 +49,10 @@
   transform: initial;
 }
 
+#header div > .right > div {
+  margin-right: 10px;
+}
+
 @media (min-width: 720px) {
   #header div > .icon {
     display: none;
@@ -64,14 +68,14 @@
     order: 1;
   }
 
-  #header div > a {
+  #header div > .right {
     order: 3;
   }
 
   #header #nav-menu ul li {
     display: inline-block;
     border: none;
-    padding: 0 5px;
+    padding: 0 10px;
   }
 
   #header #nav-menu ul li a {

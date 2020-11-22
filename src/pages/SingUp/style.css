@@ -1,0 +1,20 @@
+.form-sing-up {
+    padding: 50px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-sing-up h1,
+.form-sing-up .product-btn {
+    text-align: center;
+}
+
+.form-sing-up input,
+.form-sing-up .product-btn {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}

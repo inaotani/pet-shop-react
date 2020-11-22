@@ -12,7 +12,7 @@ const Layout = ({children}) => {
             { link: "/login", text: 'Login' },
             ]} />
 
-            <main>
+            <main id="target">
                 {children}
             </main>
             <Footer />

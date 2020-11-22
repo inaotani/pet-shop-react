@@ -4,8 +4,6 @@ import Layout from '../../components/Layout';
 import InlineCard from '../../components/InlineCard';
 import productImg from './../../assets/imgs/produto1.png';
 import banner from './../../assets/imgs/banner3.jpg';
-import Btn from '../../components/Btn';
-import BannerOffer from './../../components/BannerOffer';
 import './style.css';
 
 const Cart = () => {
@@ -28,14 +26,12 @@ const Cart = () => {
 
     return (
         <Layout>
-            <div className="container cart-page">
-                <h1>Carrinho</h1>
-                <InlineCard card={productInfo}/>
-                <div className="cart-info">
-                    <p>Valor Total: <span>R$ 235,99</span></p>
-                    <Btn link="/checkout">Fechar Pedido</Btn>
-                </div>
-                <BannerOffer banner={offer} title="Confira Também" />
+            <div className="container">
+                <h1>Estoque</h1>
+                <InlineCard type="admin" card={productInfo}/>
+                <InlineCard type="admin" card={productInfo}/>
+                <InlineCard type="admin" card={productInfo}/>
+                <InlineCard type="admin" card={productInfo}/>
             </div>
         </Layout>
     );

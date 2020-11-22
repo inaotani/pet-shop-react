@@ -1,13 +1,22 @@
 import "./style.css";
 
-const Input = ({type, name, placeholder, className, value }) => {    
+const Input = ({type, name, placeholder, className, value, label }) => {    
 
     const fieldId = `id_${name}`;
 
-    const finalClassName = className + ' input-component';
+    let labelDiv;
+    
+
+    if (label) {
+        labelDiv = <label htmlFor={fieldId}>{label}: </label>
+    }
 
     return (
-        <input className={finalClassName} id={fieldId} type={type} name={name} placeholder={placeholder} defaultValue={value} />
+        <div className="input-component">
+            {labelDiv}
+             <input className={className} id={fieldId} type={type} name={name} placeholder={placeholder} defaultValue={value} />
+        </div>
+       
     )
 }
 

@@ -9,7 +9,8 @@ const Racoes = () => {
     return (
         <Layout>
             <Search />
-            <Grid title="Rações" />
+            <h1>Rações</h1>
+            <Grid />
         </Layout>
     );
 };

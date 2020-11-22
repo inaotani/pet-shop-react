@@ -11,7 +11,7 @@ const ProductDisplay = ({product}) => {
                 <img className="product-img" src={product.img.src} alt={product.img.alt} />
                 <div className="wrap">
                     <p className="product-price">R$ {product.price}</p>
-                    <Btn link="#"><img src={cartIcon} />Adicionar ao carrinho</Btn>
+                    <Btn link="/carrinho"><img src={cartIcon} />Adicionar ao carrinho</Btn>
                     <p className="product-information">{product.description}</p>
                 </div>
             </div>

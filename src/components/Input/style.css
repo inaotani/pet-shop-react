@@ -1,5 +1,10 @@
-.input-component {
+.input-component input {
     border-radius: 10px;
     box-sizing: border-box;
 }
 
+.input-component label {
+    margin-bottom: 10px;
+    display: block;
+    text-align: left;
+}
