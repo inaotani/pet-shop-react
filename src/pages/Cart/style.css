@@ -16,3 +16,8 @@
     margin-bottom: 50px;
 }
 
+.cart-page .cart-price,
+.cart-page .cart-price strong {
+    font-size: 1.25rem;
+} 
+

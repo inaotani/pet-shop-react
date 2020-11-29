@@ -1,15 +1,24 @@
 import React from 'react';
-import Style from './style.css';
+import './style.css';
 import { useState } from 'react';
 import menuIcon from './../../assets/icons/menu-icon.svg';
 import cartIcon from './../../assets/icons/cart.svg';
 import FontSizeChanger from 'react-font-size-changer';
+import Logo from './../../assets/imgs/logo.png';
+import searchWhiteIcon from '../../assets/icons/search-white.png';
+import Serach from '../Search';
+import Search from '../Search';
 
 const Header = ({menuList}) => {
   const [menuOpen, setmenuOpen] = useState(false);
+  const [searchOpen, setsearchOpen] = useState(false);
 
   function openMenu() {
     setmenuOpen(!menuOpen);
+  }
+
+  function openSearch() {
+    setsearchOpen(!searchOpen);
   }
 
   return (
@@ -29,9 +38,12 @@ const Header = ({menuList}) => {
 
         <img className="icon" src={menuIcon} alt="Menu hamburguer" onClick={openMenu} />
         
-        <h1 className="site-title">Pet Shop</h1>
+        <a href="/" className="site-title"><img src={Logo} /></a>
         
         <div className="right">
+          <div className="header-search" onClick={openSearch}>
+            <img src={searchWhiteIcon} alt="Ícone de pesquisa" />
+          </div>
           <FontSizeChanger
             targets={['#target', '#target2']}
             onChange={(element, newValue, oldValue) => {
@@ -59,6 +71,9 @@ const Header = ({menuList}) => {
           <a href="/carrinho"><img className="icon" src={cartIcon} /></a>
         </div>
       </div>
+      <div className={searchOpen ? 'search open' : 'search'}>
+          <Search />
+        </div>
     </header>
   );
 };

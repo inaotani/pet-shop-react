@@ -7,8 +7,9 @@ const InlineCard = ({card, type}) => {
     function cartCard(card) {
         return (
             <div>
-                <p className="product-price">{card.price}</p>
+                <p className="product-price">R$ {card.price}</p>
                 <Input className="product-qtde" type="number" name="product-qtde" value="1" />
+                <a href="#">remover</a>
             </div>
         );
     };
@@ -38,7 +39,7 @@ const InlineCard = ({card, type}) => {
         <div className="inline-card">
             <img className="product-img" src={card.img.src} alt={card.img.alt} />
             <div className="product-info">
-                <h3 className="product-name">{card.name}</h3>
+                <h3 className="product-name"><a href="/produto">{card.name}</a></h3>
                 {version}
             </div>
         </div>

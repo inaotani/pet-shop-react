@@ -25,6 +25,10 @@
   margin: 0;
 }
 
+#header .site-title > img{ 
+  height: 45px;
+}
+
 #header #nav-menu ul {
   margin: 0;
   padding: 0;
@@ -51,6 +55,24 @@
 
 #header div > .right > div {
   margin-right: 10px;
+}
+
+#header .header-search {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#header .header-search img{
+  width: 25px;
+  position: relative;
+}
+
+#header .search {
+  display: none;
+}
+
+#header .search.open {
+  display: initial;
 }
 
 @media (min-width: 720px) {
@@ -97,5 +119,16 @@
     background-color: #fff;
     z-index: 3;
     transition: transform 0.5s;
+  }
+
+  #header .site-title {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 419px) {
+  #header .site-title > img {
+    height: 30px;
   }
 }

@@ -23,9 +23,14 @@
 
 .inline-card .product-qtde {
     width: 35px;
+    margin-bottom: 10px;
 }
 
 .inline-card .product-option a {
     margin-right: 10px;
     display: inline-block;
+}
+
+.inline-card .product-name a {
+    text-decoration: none;
 }

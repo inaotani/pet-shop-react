@@ -6,6 +6,7 @@ import productImg from './../../assets/imgs/produto1.png';
 import banner from './../../assets/imgs/banner3.jpg';
 import Btn from '../../components/Btn';
 import BannerOffer from './../../components/BannerOffer';
+import DivBorder from '../../components/DivBorder';
 import './style.css';
 
 const Cart = () => {
@@ -29,12 +30,15 @@ const Cart = () => {
     return (
         <Layout>
             <div className="container cart-page">
-                <h1>Carrinho</h1>
-                <InlineCard card={productInfo}/>
-                <div className="cart-info">
-                    <p>Valor Total: <span>R$ 235,99</span></p>
-                    <Btn link="/checkout">Fechar Pedido</Btn>
-                </div>
+                <DivBorder>
+                    <h1>Carrinho</h1>
+                    <InlineCard card={productInfo}/>
+                    <div className="cart-info">
+                        <a href='/'>Continuar Comprando</a>
+                        <p className="cart-price">Valor Total: <strong>R$ 235,99</strong></p>
+                        <Btn link="/checkout">Fechar Pedido</Btn>
+                    </div>
+                </DivBorder>
                 <BannerOffer banner={offer} title="Confira Também" />
             </div>
         </Layout>
