@@ -36,7 +36,7 @@ export default class Login extends Component {
         const url3 = 'https://petshop-backend.vercel.app/api/login';
         const myHeader = new Headers();
         myHeader.append("Content-Type", "application/json");
-        myHeader.append("Access-Control-Allow-Origin", "http://localhost:3000");
+        myHeader.append("Access-Control-Allow-Origin", "*");
         myHeader.append('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
         myHeader.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
         const requestOption = {
