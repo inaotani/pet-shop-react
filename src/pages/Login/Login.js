@@ -46,7 +46,7 @@ export default class Login extends Component {
             redirect: 'follow'
         }
 
-        fetch(url1, requestOption)
+        fetch(url, requestOption)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
