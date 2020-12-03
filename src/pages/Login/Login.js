@@ -33,18 +33,17 @@ export default class Login extends Component {
       password: "asdfasdfasdf",
     });
 
-    const url =
-      "https://cors-anywhere.herokuapp.com/https://petshop-backend.vercel.app/api/login";
+    const url = "https://petshop-backend.vercel.app/api/login";
 
     const requestOption = {
       method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
       body: json,
     };
 
-    fetch(url, requestOption)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
+    fetch(url, requestOption);
   }
 
   render() {
