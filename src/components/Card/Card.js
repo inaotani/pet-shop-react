@@ -1,11 +1,11 @@
 import React from "react";
-import Style from "./style.css";
+import "./style.css";
 import Btn from "../Btn";
 
 const Card = ({ card }) => {
   return (
     <div className="product">
-      <img className="product-img" src={card.img} />
+      <img className="product-img" src={"data:image/png;base64," + card.img} />
       <div className="product-info">
         <h3 className="product-name">{card.title}</h3>
         <p className="product-price">R$ {card.price}</p>

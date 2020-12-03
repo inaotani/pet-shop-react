@@ -4,6 +4,7 @@ import Card from "../Card";
 import productImg from "./../../assets/imgs/produto1.png";
 
 const Grid = ({ title, products }) => {
+  console.log(products);
   return (
     <div>
       <h2>{title}</h2>
@@ -14,7 +15,7 @@ const Grid = ({ title, products }) => {
             card={{
               title: single.name,
               price: single.price,
-              img: productImg,
+              img: single.photo,
               link: `/p/${single._id}`,
             }}
           />

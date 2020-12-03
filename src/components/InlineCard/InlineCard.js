@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Children } from "react";
 import "./style.css";
 import Input from "./../Input";
 
-const InlineCard = ({ card, type }) => {
+const InlineCard = ({ card, type, children }) => {
   let version;
+
   function cartCard(card) {
     return (
       <div>
@@ -12,9 +13,9 @@ const InlineCard = ({ card, type }) => {
           className="product-qtde"
           type="number"
           name="product-qtde"
-          value="1"
+          value={card.quantity}
         />
-        <a href="#">remover</a>
+        {children}
       </div>
     );
   }
@@ -42,10 +43,10 @@ const InlineCard = ({ card, type }) => {
 
   return (
     <div className="inline-card">
-      <img className="product-img" src={card.img.src} alt={card.img.alt} />
+      <img src={"data:image/png;base64," + card.img} alt={card.name} />
       <div className="product-info">
         <h3 className="product-name">
-          <a href="/produto">{card.name}</a>
+          <a href={`/p/${card.id}`}>{card.name}</a>
         </h3>
         {version}
       </div>

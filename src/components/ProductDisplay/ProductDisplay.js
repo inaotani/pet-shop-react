@@ -13,8 +13,9 @@ const ProductDisplay = ({ product }) => {
     newState.push({
       name: product.name,
       price: product.price,
-      img: product.img,
-      quantity: 1,
+      img: product.photo,
+      quantity: 2,
+      id: product._id,
     });
     setState(newState);
   }
@@ -24,8 +25,8 @@ const ProductDisplay = ({ product }) => {
       <div className="product-hero">
         <img
           className="product-img"
-          src={product.img.src}
-          alt={product.img.alt}
+          src={"data:image/png;base64," + product.photo}
+          alt={product.name}
         />
         <div className="wrap" onClick={handleBuy}>
           <p className="product-price">R$ {product.price}</p>
