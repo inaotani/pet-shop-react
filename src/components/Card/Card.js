@@ -2,7 +2,7 @@ import React from "react";
 import Style from "./style.css";
 import Btn from "../Btn";
 
-const Card = ({card}) => {
+const Card = ({ card }) => {
   return (
     <div className="product">
       <img className="product-img" src={card.img} />
