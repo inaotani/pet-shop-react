@@ -2,8 +2,6 @@ import { createContext, useEffect, useState } from "react";
 
 const store = createContext([]);
 
-const login = createContext([]);
-
 const { Provider } = store;
 
 const StoreProvider = ({ children }) => {
@@ -15,9 +13,8 @@ const StoreProvider = ({ children }) => {
     window.localStorage.setItem("cart", JSON.stringify(state));
   }, [state]);
 
-  const auth = window.localStorage.getItem("auth")
-    ? window.localStorage.getItem("auth")
-    : false;
+  const auth =
+    JSON.parse(window.localStorage.getItem("auth")) === true ? true : false;
   const [login, setLogin] = useState(auth);
   useEffect(() => {
     window.localStorage.setItem("auth", JSON.stringify(login));
@@ -28,4 +25,4 @@ const StoreProvider = ({ children }) => {
   );
 };
 
-export { StoreProvider, store, login };
+export { StoreProvider, store };

@@ -1,20 +1,40 @@
 .form {
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .form h1,
 .form .product-btn {
-    text-align: center;
+  text-align: center;
 }
 
 .form input,
 .form .product-btn {
-    display: block;
-    margin-bottom: 20px;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.form input[type="submit"] {
+  background-color: #8643f3;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.2rem;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.form .mgs-error {
+  color: red;
+}
+
+.form .mgs-error.hidden {
+  display: none;
 }
