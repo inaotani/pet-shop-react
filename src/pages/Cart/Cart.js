@@ -11,7 +11,9 @@ import { store } from "../../store";
 
 const Cart = () => {
   const productInfoContext = useContext(store);
+  const setState = productInfoContext.setState;
   const productInfo = productInfoContext.state;
+  let content;
   const offer = {
     src: banner,
     alt: "oferta",
@@ -27,6 +29,46 @@ const Cart = () => {
       setAmount(aux);
     }
   }, [productInfo]);
+  
+  function handleExclue(id) {
+    const newState = [...productInfo];
+    {newState.map((single, index) => {
+      if(single.id === id) {
+        newState.splice(index, 1);
+        setState(newState);
+      }
+      console.log("excluir");
+    })}
+  }
+
+  console.log(productInfo);
+
+  function hasItem (){
+    return (
+      <div>
+        <a href="/">Continuar Comprando</a>
+        <p className="cart-price">
+          Valor Total: <strong>R$ {amount}</strong>
+        </p>
+        <Btn link="/checkout">Fechar Pedido</Btn>
+      </div>
+    )
+  }
+  
+  function hasntItem (){
+    return (
+      <div>
+        <p>Carrinho vazio!</p>
+        <Btn link="/">Conferir produtos</Btn>
+      </div>
+    )
+  }
+
+  if (productInfo.length > 0) {
+    content = hasItem();
+  } else {
+    content = hasntItem();
+  }
 
   return (
     <Layout>
@@ -34,15 +76,15 @@ const Cart = () => {
         <DivBorder>
           <h1>Carrinho</h1>
           {productInfo.map((single, index) => {
-            return <InlineCard key={index} card={single} />;
+            return <InlineCard key={index} card={single}>
+              <div onClick={() => handleExclue(single.id)}>
+                <a href="#">Excluir</a>
+              </div>
+            </InlineCard>;
           })}
 
           <div className="cart-info">
-            <a href="/">Continuar Comprando</a>
-            <p className="cart-price">
-              Valor Total: <strong>R$ {amount}</strong>
-            </p>
-            <Btn link="/checkout">Fechar Pedido</Btn>
+           {content}
           </div>
         </DivBorder>
         <BannerOffer banner={offer} title="Veja Também" />

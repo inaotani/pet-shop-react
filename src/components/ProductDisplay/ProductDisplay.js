@@ -14,7 +14,7 @@ const ProductDisplay = ({ product }) => {
     newState.push({
       name: product.name,
       price: product.price,
-      img: product.photo,
+      photo: product.photo,
       quantity: qtde,
       id: product._id,
     });

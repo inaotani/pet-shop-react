@@ -8,6 +8,7 @@ import SingUp from "./pages/SingUp";
 import Checkout from "./pages/Checkout";
 import MyAccount from "./pages/MyAccount";
 import AdminProduct from "./pages/AdminProduct";
+import EditProduct from "./pages/EditProduct";
 import { StoreProvider } from "./store";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/racoes" component={Racoes} />
           <Route path="/login" component={Login} />
           <Route path="/p/:id" component={Product} />
+          <Route path="/p-edit/:id" component={EditProduct} />
           <Route path="/carrinho" component={Cart} />
           <Route path="/cadastra-se" component={SingUp} />
           <Route path="/checkout" component={Checkout} />

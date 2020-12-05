@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./../../index.css";
 import Layout from '../../components/Layout';
 import InlineCard from '../../components/InlineCard';
@@ -7,31 +7,34 @@ import banner from './../../assets/imgs/banner3.jpg';
 import './style.css';
 
 const Cart = () => {
-    const productInfo = {
-        name: 'Royal Canin - Adulto - 15kg',
-        price: '235,99',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod egestas sollicitudin. Nulla ut lectus nec arcu cursus fermentum ac ut ligula.',
-        img: {
-            src: productImg,
-            alt: 'Ração Royal Canin',
-        },
-        status: 'Em estoque',
-        amount: '20',
-    }
+    const [products, setProducts] = useState([]);
 
-    const offer = {
-        src: banner,
-        alt: "oferta",
-    };
+    useEffect(() => {
+      async function getProducts() {
+        const response = await fetch(
+          "https://petshop-backend.vercel.app/api/supply"
+        );
+        const data = await response.json();
+        setProducts(data);
+      }
+  
+      getProducts();
+    }, []);
+
+    console.log(products);
+
 
     return (
         <Layout>
             <div className="container">
                 <h1>Estoque</h1>
-                <InlineCard type="admin" card={productInfo}/>
-                <InlineCard type="admin" card={productInfo}/>
-                <InlineCard type="admin" card={productInfo}/>
-                <InlineCard type="admin" card={productInfo}/>
+                {products.map((single, index) => (
+                    <InlineCard
+                    key= {single.name + index}
+                        card={single}
+                        type="admin"
+                    />
+                    ))}
             </div>
         </Layout>
     );

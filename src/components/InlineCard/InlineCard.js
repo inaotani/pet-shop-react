@@ -1,13 +1,10 @@
 import React, { Children } from "react";
 import "./style.css";
 import Input from "./../Input";
+import { Link } from "react-router-dom";
 
 const InlineCard = ({ card, type, children }) => {
   let version;
-
-  function handleExclue(id) {
-    console.log(id);
-  }
 
   function cartCard(card) {
     return (
@@ -19,9 +16,6 @@ const InlineCard = ({ card, type, children }) => {
           name="product-qtde"
           value={card.quantity}
         />
-        <div onClick={handleExclue(card.id)}>
-          <a href="#">Excluir</a>
-        </div>
         {children}
       </div>
     );
@@ -31,11 +25,11 @@ const InlineCard = ({ card, type, children }) => {
     return (
       <div>
         <p>{card.description}</p>
-        <p>Status: {card.status}</p>
+        <p>Vendidos: {card.sold}</p>
         <p>Preço: {card.price}</p>
-        <p>Qtde: {card.amount}</p>
+        <p>Qtde: {card.stock}</p>
         <div className="product-option">
-          <a href="#">Editar</a>
+          <Link to={`/p-edit/${card._id}`}>Editar</Link>
           <a href="#">Excluir</a>
         </div>
       </div>
@@ -50,7 +44,7 @@ const InlineCard = ({ card, type, children }) => {
 
   return (
     <div className="inline-card">
-      <img src={"data:image/png;base64," + card.img} alt={card.name} />
+      <img src={"data:image/png;base64," + card.photo} alt={card.name} />
       <div className="product-info">
         <h3 className="product-name">
           <a href={`/p/${card.id}`}>{card.name}</a>

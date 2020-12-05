@@ -9,12 +9,18 @@ import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const globalLogin = useContext(store);
-  const { login, setLogin } = globalLogin;
+  const { state, login, setLogin } = globalLogin;
   const [status, setStatus] = useState(0);
   let history = useHistory();
 
   useEffect(() => {
-    if (login) history.push("/minha-conta");
+    if (login){
+      if(state) {
+        history.push("/checkout");
+      }else{
+        history.push("/minha-conta");
+      }
+    }
   }, []);
 
   async function postLogin(user) {

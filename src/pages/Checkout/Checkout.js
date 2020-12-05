@@ -1,10 +1,18 @@
-import React from 'react';
+import React , {useEffect, useContext} from 'react';
 import Layout from '../../components/Layout';
 import Btn from '../../components/Btn';
 import DivBorder from '../../components/DivBorder';
+import { useHistory } from "react-router-dom";
+import { store } from "../../store";
 import './style.css';
 
 const Checkout = () => {
+    const globalLogin = useContext(store);
+    const { login } = globalLogin;
+    let history = useHistory();
+    useEffect(() => {
+        if (!login) history.push("/login");
+      }, []);
     return (   
         <Layout>
             <div className="container checkout">  

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./../index.css";
 import Layout from "./../components/Layout";
 import ProductDisplay from "./../components/ProductDisplay";
-import productImg from "./../assets/imgs/produto1.png";
 import { useParams } from "react-router-dom";
 
 const Product = () => {
