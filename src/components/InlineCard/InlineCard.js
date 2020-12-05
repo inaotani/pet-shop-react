@@ -5,6 +5,10 @@ import Input from "./../Input";
 const InlineCard = ({ card, type, children }) => {
   let version;
 
+  function handleExclue(id) {
+    console.log(id);
+  }
+
   function cartCard(card) {
     return (
       <div>
@@ -15,6 +19,9 @@ const InlineCard = ({ card, type, children }) => {
           name="product-qtde"
           value={card.quantity}
         />
+        <div onClick={handleExclue(card.id)}>
+          <a href="#">Excluir</a>
+        </div>
         {children}
       </div>
     );

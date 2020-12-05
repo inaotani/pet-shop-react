@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import "./../../index.css";
 import Layout from "./../../components/Layout";
 import Input from "./../../components/Input";
 import Btn from "./../../components/Btn";

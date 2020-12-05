@@ -1,49 +1,56 @@
 .product-display h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin: 50px 0;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 50px 0;
 }
 
 .product-display .product-hero {
-    text-align: center;
+  text-align: center;
 }
 
 .product-display .product-img {
-    max-height: 500px;
-    margin-bottom: 50px;
+  max-height: 500px;
+  margin-bottom: 50px;
 }
 
 .product-display .product-price {
-    font-size: 1.75rem;
-    margin-bottom: 20px;
+  font-size: 1.75rem;
+  margin-bottom: 20px;
 }
 
 .product-display .product-btn {
-    padding: 5px 20px 10px;
-    margin-bottom: 30px;
+  padding: 5px 20px 10px;
+  margin-bottom: 30px;
 }
 
 .product-display .product-btn img {
-    margin-right: 10px;
-    position: relative;
-    top: 5px;
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
 }
 
 .product-display .product-information {
-    font-size: 1.5rem;
-    text-align: left;
-    line-height: 1.5;
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.product-display .product-qtde {
+  display: block;
+  width: 50px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 @media (min-width: 1024px) {
-    .product-display .product-hero {
-        display: flex;
-        align-items: center;
-    }
+  .product-display .product-hero {
+    display: flex;
+    align-items: center;
+  }
 
-    .product-display .product-hero .wrap {
-        text-align: left;
-        margin-left: 50px;
-    }
-
+  .product-display .product-hero .wrap {
+    text-align: left;
+    margin-left: 50px;
+  }
 }

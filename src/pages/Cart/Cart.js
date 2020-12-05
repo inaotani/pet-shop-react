@@ -34,7 +34,7 @@ const Cart = () => {
         <DivBorder>
           <h1>Carrinho</h1>
           {productInfo.map((single, index) => {
-            return <InlineCard key={single.name + index} card={single} />;
+            return <InlineCard key={index} card={single} />;
           })}
 
           <div className="cart-info">
