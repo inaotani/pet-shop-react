@@ -38,7 +38,7 @@
 .product-display .product-qtde {
   display: block;
   width: 50px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   border-radius: 10px;
   padding: 5px;
 }
@@ -46,11 +46,15 @@
 @media (min-width: 1024px) {
   .product-display .product-hero {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .product-display .product-hero .wrap {
     text-align: left;
     margin-left: 50px;
+  }
+
+  .product-display .product-qtde {
+    margin: 0 0 20px;
   }
 }

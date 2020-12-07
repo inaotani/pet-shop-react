@@ -8,6 +8,7 @@ const Input = ({
   value,
   label,
   required,
+  step
 }) => {
   const fieldId = `id_${name}`;
 
@@ -28,6 +29,7 @@ const Input = ({
         placeholder={placeholder}
         defaultValue={value}
         required={required}
+        step={step}
       />
     </div>
   );

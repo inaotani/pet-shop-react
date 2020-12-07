@@ -180,6 +180,18 @@ main {
   padding-top: 63px;
 }
 
+input[type="submit"] {
+  background-color: #8643f3;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.2rem;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-block;
+}
+
 @media (min-width: 720px) {
   * {
     font-size: 16px;

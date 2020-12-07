@@ -1,18 +1,11 @@
-.cart-page {
+.admin-product .btn-exclude{
+    display: inline-block;
+}
+
+.admin-product {
     padding-bottom: 50px;
 }
 
-.cart-page h1 {
-    text-align: center;
+.admin-product .inline-card {
+    background-color: #fff;
 }
-
-.cart-page .inline-card {
-    max-width: 500px;
-    margin: 0 auto 50px;
-}
-
-.cart-page .cart-info {
-    text-align: center;
-    margin-bottom: 50px;
-}
-

@@ -9,6 +9,7 @@ import Checkout from "./pages/Checkout";
 import MyAccount from "./pages/MyAccount";
 import AdminProduct from "./pages/AdminProduct";
 import EditProduct from "./pages/EditProduct";
+import AddProduct from "./pages/AddProduct";
 import { StoreProvider } from "./store";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/checkout" component={Checkout} />
           <Route path="/minha-conta" component={MyAccount} />
           <Route path="/estoque" component={AdminProduct} />
+          <Route path="/add-produto" component={AddProduct} />
         </Switch>
       </Router>
     </StoreProvider>

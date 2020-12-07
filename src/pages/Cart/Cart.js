@@ -26,7 +26,7 @@ const Cart = () => {
       productInfo.map((single, index) => {
         aux = aux + parseFloat(single.price) * single.quantity;
       });
-      setAmount(aux);
+      setAmount(aux.toFixed(2));
     }
   }, [productInfo]);
   
