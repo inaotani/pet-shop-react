@@ -25,7 +25,7 @@
   margin: 0;
 }
 
-#header .site-title > img{ 
+#header .site-title > img {
   height: 45px;
 }
 
@@ -62,7 +62,7 @@
   margin-right: 10px;
 }
 
-#header .header-search img{
+#header .header-search img {
   width: 25px;
   position: relative;
 }
@@ -73,6 +73,29 @@
 
 #header .search.open {
   display: initial;
+}
+
+#header .cart-icon {
+  position: relative;
+}
+
+#header .hidden .cart-qtde {
+  display: none;
+}
+
+#header .cart-qtde {
+  position: absolute;
+  top: 3px;
+  right: -7px;
+  background-color: #fff;
+  color: #8643f3;
+  padding: 5px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 0.8;
 }
 
 @media (min-width: 720px) {

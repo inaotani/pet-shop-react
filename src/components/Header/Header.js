@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "./style.css";
-import { useState } from "react";
 import menuIcon from "./../../assets/icons/menu-icon.svg";
 import cartIcon from "./../../assets/icons/cart.svg";
 import FontSizeChanger from "react-font-size-changer";
 import Logo from "./../../assets/imgs/logo.png";
 import searchWhiteIcon from "../../assets/icons/search-white.png";
-import Serach from "../Search";
 import Search from "../Search";
 import { Link } from "react-router-dom";
+import { store } from "../../store";
 
 const Header = ({ menuList }) => {
   const [menuOpen, setmenuOpen] = useState(false);
   const [searchOpen, setsearchOpen] = useState(false);
+  const productInfoContext = useContext(store);
+  const productQtde = productInfoContext.state.length;
 
   function openMenu() {
     setmenuOpen(!menuOpen);
@@ -43,7 +44,7 @@ const Header = ({ menuList }) => {
         />
 
         <Link to="/" className="site-title">
-          <img src={Logo} />
+          <img src={Logo} alt="logo do pet shop" />
         </Link>
 
         <div className="right">
@@ -74,8 +75,12 @@ const Header = ({ menuList }) => {
               buttonsMargin: 5,
             }}
           />
-          <a href="/carrinho">
+          <a
+            className={productQtde > 0 ? "cart-icon" : "cart-icon hidden"}
+            href="/carrinho"
+          >
             <img className="icon" src={cartIcon} />
+            <div className="cart-qtde">{productQtde}</div>
           </a>
         </div>
       </div>
