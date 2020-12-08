@@ -12,6 +12,24 @@ const MyAccount = () => {
 
   useEffect(() => {
     if (!login.status) history.push("/login");
+    async function getSell() {
+      const requestOption = {
+        method: "GET",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluIiwiaWQiOiI1ZmMyZTkzYTgzNGQ3OTI4YmViMDQ0NzkiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjA3MzkzNjg4fQ.7tV5nAXtLlekBX06Jv4s7UdBNW0Nr_0f_ksK0dFi7Jg",
+        },
+      };
+
+      const response = await fetch(
+        "https://petshop-backend.vercel.app/api/sell",
+        requestOption
+      );
+      const data = await response.json();
+      console.log(data);
+    }
+
+    getSell();
   }, []);
 
   function handleLogout() {
