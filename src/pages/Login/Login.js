@@ -14,14 +14,26 @@ const Login = () => {
   let history = useHistory();
 
   useEffect(() => {
-    if (login){
-      if(state) {
+    if (login.status) {
+      if (state) {
         history.push("/checkout");
-      }else{
+      } else {
         history.push("/minha-conta");
       }
     }
   }, []);
+
+  function isAdmin(token) {
+    const parts = token.split(".");
+    const user = JSON.parse(atob(parts[1]));
+    if (user.admin) {
+      setLogin({ status: true, admin: true });
+      history.push("/estoque");
+    } else {
+      setLogin({ status: true, admin: false });
+      history.push("/minha-conta");
+    }
+  }
 
   async function postLogin(user) {
     const url = "https://petshop-backend.vercel.app/api/login";
@@ -37,9 +49,8 @@ const Login = () => {
 
     const response = await fetch(url, requestOption).then((response) => {
       if (response.status === 200) {
-        setLogin(true);
-        history.push("/minha-conta");
         setStatus(0);
+        isAdmin(response.headers.get("Authorization"));
       } else {
         setStatus(1);
       }
@@ -84,7 +95,6 @@ const Login = () => {
             </p>
             <input type="submit" placeholder="senha" value="Entrar" />
             <Btn link="cadastra-se">Cadastrar-se</Btn>
-            <a href="/estoque">Admin</a>
           </form>
         </DivBorder>
       </div>

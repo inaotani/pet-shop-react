@@ -11,11 +11,11 @@ const MyAccount = () => {
   let history = useHistory();
 
   useEffect(() => {
-    if (!login) history.push("/login");
+    if (!login.status) history.push("/login");
   }, []);
 
   function handleLogout() {
-    setLogin(false);
+    setLogin({ status: false, admin: false });
     history.push("/login");
   }
   return (

@@ -1,11 +1,16 @@
-.admin-product .btn-exclude{
-    display: inline-block;
+.admin-product .btn-exclude {
+  display: inline-block;
 }
 
 .admin-product {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .admin-product .inline-card {
-    background-color: #fff;
+  background-color: #fff;
+}
+
+.admin-product .product-btn {
+  margin-right: 20px;
+  display: inline-block;
 }
