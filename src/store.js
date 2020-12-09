@@ -14,7 +14,9 @@ const StoreProvider = ({ children }) => {
   }, [state]);
 
   let localAuth = JSON.parse(window.localStorage.getItem("auth"));
-  const auth = localAuth.status ? localAuth : { status: false, admin: false };
+  const auth = localAuth
+    ? localAuth
+    : { status: false, admin: false, auth: "" };
   const [login, setLogin] = useState(auth);
   useEffect(() => {
     window.localStorage.setItem("auth", JSON.stringify(login));

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import DivBorder from "../../components/DivBorder";
 import "./style.css";
@@ -8,34 +8,51 @@ import { store } from "../../store";
 const MyAccount = () => {
   const globalLogin = useContext(store);
   const { login, setLogin } = globalLogin;
+  const [historic, setHistoric] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
   let history = useHistory();
 
   useEffect(() => {
     if (!login.status) history.push("/login");
-    async function getSell() {
+
+    async function getUser() {
       const requestOption = {
         method: "GET",
         headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluIiwiaWQiOiI1ZmMyZTkzYTgzNGQ3OTI4YmViMDQ0NzkiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjA3MzkzNjg4fQ.7tV5nAXtLlekBX06Jv4s7UdBNW0Nr_0f_ksK0dFi7Jg",
+          Authorization: `Bearer ${login.auth}`,
         },
       };
 
-      const response = await fetch(
-        "https://petshop-backend.vercel.app/api/sell",
-        requestOption
-      );
-      const data = await response.json();
-      console.log(data);
+      try {
+        const [data1, data2] = await Promise.all([
+          fetch(
+            "https://petshop-backend.vercel.app/api/user",
+            requestOption
+          ).then((value) => value.json()),
+          fetch(
+            "https://petshop-backend.vercel.app/api/sell",
+            requestOption
+          ).then((value) => value.json()),
+        ]).then((value) => {
+          setUserInfo(value[0]);
+          setHistoric(value[1]);
+          console.log(userInfo);
+          console.log(historic);
+        });
+      } catch (err) {
+        console.log(err);
+      }
     }
-
-    getSell();
+    getUser();
   }, []);
 
+  useEffect(() => {}, []);
+
   function handleLogout() {
-    setLogin({ status: false, admin: false });
+    setLogin({ status: false, admin: false, auth: "" });
     history.push("/login");
   }
+
   return (
     <Layout>
       <div className="container my-account">
@@ -44,13 +61,13 @@ const MyAccount = () => {
           <div className="person-info">
             <h2>Informações de Pessoais</h2>
             <p>
-              Joe Doe
+              {userInfo.name}
               <br />
-              joe.doe@gmail.com
+              {userInfo.email}
               <br />
-              Av. São Carlos, 2020 - Centro
+              {userInfo.address}
               <br />
-              01/01/200
+              {userInfo.phone}
               <br />
             </p>
             <div>

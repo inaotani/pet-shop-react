@@ -37,7 +37,7 @@ const Cart = () => {
   }
 
   function handleLogout() {
-    setLogin({ status: false, admin: false });
+    setLogin({ status: false, admin: false, auth: "" });
     history.push("/login");
   }
 

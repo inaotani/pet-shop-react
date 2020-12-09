@@ -27,12 +27,13 @@ const Login = () => {
     const parts = token.split(".");
     const user = JSON.parse(atob(parts[1]));
     if (user.admin) {
-      setLogin({ status: true, admin: true });
+      setLogin({ status: true, admin: true, auth: token });
       history.push("/estoque");
     } else {
-      setLogin({ status: true, admin: false });
+      setLogin({ status: true, admin: false, auth: token });
       history.push("/minha-conta");
     }
+    console.log(token);
   }
 
   async function postLogin(user) {
