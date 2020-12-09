@@ -88,6 +88,7 @@ const EditProduct = () => {
               value={product.description}
               label="Descrição"
             />
+            <label>Imagem: </label>
             <FileBase64 onDone={getFiles.bind(this)} />
             <Input
               type="number"

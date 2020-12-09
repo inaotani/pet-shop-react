@@ -58,6 +58,7 @@ const AddProduct = () => {
         <DivBorder>
           <Link to="/estoque">Voltar</Link>
           <h1>Adicionar Produto</h1>
+          <label>Imagem: </label>
           <form method="POST" onSubmit={handleAdd}>
             <FileBase64 onDone={getFiles.bind(this)} />
             <Input
