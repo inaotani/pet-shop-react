@@ -60,6 +60,7 @@
 #header .header-search {
   display: inline-block;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 #header .header-search img {

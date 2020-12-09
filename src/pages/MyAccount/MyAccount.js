@@ -4,6 +4,7 @@ import DivBorder from "../../components/DivBorder";
 import "./style.css";
 import { Link, useHistory } from "react-router-dom";
 import { store } from "../../store";
+import Moment from "moment";
 
 const MyAccount = () => {
   const globalLogin = useContext(store);
@@ -82,7 +83,7 @@ const MyAccount = () => {
                 <p>
                   <strong>ID: {single._id}</strong>
                   <br />
-                  Data: {single.date}
+                  Data: {Moment(single.date).format("DD/MM/YYYY")}
                   <br />
                   Preço total: {single.totalPrice}
                   <br />

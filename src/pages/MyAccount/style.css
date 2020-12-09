@@ -1,23 +1,32 @@
 .my-account h1 {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.my-account p,
+.my-account div {
+  line-height: 1.5;
 }
 
 .my-account h2 {
-    text-align: left;
-    margin-bottom: 0;
+  text-align: left;
+  margin-bottom: 0;
 }
 
 .my-account > div {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .my-account .order-info a {
-    color: #8643f3;
+  color: #8643f3;
 }
 
-@media (min-width: 1024px){
-    .my-account { 
-        padding-bottom: 100px;
-    }
+.my-account .order-info {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+  .my-account {
+    padding-bottom: 100px;
+  }
 }

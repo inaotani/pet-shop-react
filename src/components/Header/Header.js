@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "./style.css";
 import menuIcon from "./../../assets/icons/menu-icon.svg";
 import cartIcon from "./../../assets/icons/cart.svg";
+import closeIcon from "./../../assets/icons/close.png";
 import FontSizeChanger from "react-font-size-changer";
 import Logo from "./../../assets/imgs/logo.png";
 import searchWhiteIcon from "../../assets/icons/search-white.png";
@@ -49,7 +50,10 @@ const Header = ({ menuList }) => {
 
         <div className="right">
           <div className="header-search" onClick={openSearch}>
-            <img src={searchWhiteIcon} alt="Ícone de pesquisa" />
+            <img
+              src={searchOpen ? closeIcon : searchWhiteIcon}
+              alt="Ícone de pesquisa"
+            />
           </div>
           <FontSizeChanger
             targets={["#target", "#target2"]}

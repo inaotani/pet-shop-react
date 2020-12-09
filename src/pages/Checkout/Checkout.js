@@ -38,11 +38,13 @@ const Checkout = () => {
     e.preventDefault();
 
     const products = state.map((single) => ({
-      _id: single._id,
+      productId: single.id,
       name: single.name,
       quantity: single.quantity,
       price: single.price,
     }));
+
+    console.log(products);
 
     const json = JSON.stringify({
       bill: products,
