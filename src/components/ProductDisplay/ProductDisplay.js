@@ -22,7 +22,7 @@ const ProductDisplay = ({ product }) => {
   }
 
   return (
-    <div className="product-display container">
+    <div className="product-display">
       <h1>{product.name}</h1>
       <div className="product-hero">
         <img
@@ -47,9 +47,9 @@ const ProductDisplay = ({ product }) => {
               Adicionar ao carrinho
             </Btn>
           </div>
-          <p className="product-information">{product.description}</p>
         </div>
       </div>
+      <p className="product-information">{product.description}</p>
     </div>
   );
 };

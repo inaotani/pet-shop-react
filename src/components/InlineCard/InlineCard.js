@@ -44,7 +44,7 @@ const InlineCard = ({ card, type, children }) => {
 
   return (
     <div className="inline-card">
-      <img className="product-img" src={"data:image/png;base64," + card.photo} alt={card.name} />
+      <img className="product-img" src={card.photo} alt={card.name} />
       <div className="product-info">
         <h3 className="product-name">
           <a href={`/p/${card.id}`}>{card.name}</a>

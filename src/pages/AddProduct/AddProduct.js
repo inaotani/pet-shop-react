@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../components/Layout";
 import Input from "../../components/Input";
 import DivBorder from "../../components/DivBorder";
 import "./style.css";
 import { Link, useHistory } from "react-router-dom";
+import FileBase64 from "react-file-base64";
 
 const AddProduct = () => {
   let history = useHistory();
+  const [files, setFiles] = useState([0]);
+
+  function getFiles(files) {
+    setFiles(files);
+  }
+
   function handleAdd(e) {
     e.preventDefault();
     const json = JSON.stringify({
       name: e.target.name.value,
       description: e.target.description.value,
-      photo: e.target.photo.value,
+      photo: files.base64,
       price: e.target.price.value,
       stock: e.target.stock.value,
     });
@@ -52,13 +59,7 @@ const AddProduct = () => {
           <Link to="/estoque">Voltar</Link>
           <h1>Adicionar Produto</h1>
           <form method="POST" onSubmit={handleAdd}>
-            <Input
-              type="text"
-              id="photo"
-              name="photo"
-              label="Foto"
-              placeholder="Código da imagem em base 64"
-            />
+            <FileBase64 onDone={getFiles.bind(this)} />
             <Input
               type="text"
               id="name"
