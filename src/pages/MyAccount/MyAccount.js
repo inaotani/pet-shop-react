@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import DivBorder from "../../components/DivBorder";
 import "./style.css";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { store } from "../../store";
 
 const MyAccount = () => {
@@ -36,8 +36,6 @@ const MyAccount = () => {
         ]).then((value) => {
           setUserInfo(value[0]);
           setHistoric(value[1]);
-          console.log(userInfo);
-          console.log(historic);
         });
       } catch (err) {
         console.log(err);
@@ -70,38 +68,41 @@ const MyAccount = () => {
               {userInfo.phone}
               <br />
             </p>
-            <div>
-              <a href="#">Editar</a>
-            </div>
           </div>
           <div className="order-info">
-            <h2>Histórico de Pedidos</h2>
             <p>
-              <strong>Pedido: 131289</strong>
-              <br />
-              12/10/2020 <br />
-              1x Royal Canin - Adulto - 15kg -{" "}
-              <a href="/produto">Comprar Novamente</a>
-              <br />
-              Cartão Nubank
-              <br />
-              Num. xxxx.xxxx.xxxx.2020
-              <br />
-              1x de 235,99
+              <h2>
+                {historic.length > 0
+                  ? "Histórico de Pedidos"
+                  : "Nenhum pedido realizado"}
+              </h2>
             </p>
-            <p>
-              <strong>Pedido: 017638</strong>
-              <br />
-              15/02/2020 <br />
-              1x Royal Canin - Adulto - 15kg -{" "}
-              <a href="/produto">Comprar Novamente</a>
-              <br />
-              Cartão Nubank
-              <br />
-              Num. xxxx.xxxx.xxxx.2020
-              <br />
-              1x de 235,99
-            </p>
+            {historic.map((single) => (
+              <div>
+                <p>
+                  <strong>ID: {single._id}</strong>
+                  <br />
+                  Data: {single.date}
+                  <br />
+                  Preço total: {single.totalPrice}
+                  <br />
+                  Cartão: {single.creditCard}
+                </p>
+                <div>
+                  <strong>Produtos:</strong>
+                  <div>
+                    {single.bill.map((b) => (
+                      <div>
+                        <Link to={`/p/${b._id}`}>{b.name}</Link>
+                        <br />
+                        {b.quantity}x{b.price}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <hr />
+              </div>
+            ))}
           </div>
           <a href="#" onClick={handleLogout}>
             <strong>Sair</strong>

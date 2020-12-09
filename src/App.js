@@ -10,6 +10,7 @@ import MyAccount from "./pages/MyAccount";
 import AdminProduct from "./pages/AdminProduct";
 import EditProduct from "./pages/EditProduct";
 import AddProduct from "./pages/AddProduct";
+import SearchPage from "./pages/SearchPage";
 import { StoreProvider } from "./store";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/minha-conta" component={MyAccount} />
           <Route path="/estoque" component={AdminProduct} />
           <Route path="/add-produto" component={AddProduct} />
+          <Route path="/busca/:term" component={SearchPage} />
         </Switch>
       </Router>
     </StoreProvider>

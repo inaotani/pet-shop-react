@@ -177,7 +177,7 @@ p {
 
 main {
   min-height: calc(100vh - 60px);
-  padding-top: 63px;
+  padding-top: 82px;
 }
 
 input[type="submit"] {

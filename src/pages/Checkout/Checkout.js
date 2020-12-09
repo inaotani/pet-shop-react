@@ -1,18 +1,80 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import Layout from "../../components/Layout";
 import Btn from "../../components/Btn";
 import DivBorder from "../../components/DivBorder";
 import { useHistory } from "react-router-dom";
 import { store } from "../../store";
 import "./style.css";
+import Input from "../../components/Input";
 
 const Checkout = () => {
   const globalLogin = useContext(store);
-  const { login } = globalLogin;
+  const { login, totalPrice, state, setState, setTotalPrice } = globalLogin;
+  const [user, setUser] = useState([]);
   let history = useHistory();
+
   useEffect(() => {
     if (!login.status) history.push("/login");
+    async function getUser() {
+      const requestOption = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${login.auth}`,
+        },
+      };
+
+      const response = await fetch(
+        "https://petshop-backend.vercel.app/api/user",
+        requestOption
+      );
+      const data = await response.json();
+      setUser(data);
+    }
+
+    getUser();
   }, []);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const products = state.map((single) => ({
+      _id: single._id,
+      name: single.name,
+      quantity: single.quantity,
+      price: single.price,
+    }));
+
+    const json = JSON.stringify({
+      bill: products,
+      creditCard: e.target.creditCart.value,
+      totalPrice: totalPrice,
+    });
+
+    async function addSell() {
+      const url = `https://petshop-backend.vercel.app/api/sell`;
+
+      const requestOption = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${login.auth}`,
+        },
+        body: json,
+      };
+
+      const response = await fetch(url, requestOption).then((response) => {
+        if (response.status === 200) {
+          setState([]);
+          setTotalPrice(0);
+          history.push("/minha-conta");
+        } else {
+          alert("Error ao cadastrar");
+        }
+      });
+    }
+    addSell();
+  }
   return (
     <Layout>
       <div className="container checkout">
@@ -21,36 +83,48 @@ const Checkout = () => {
           <div className="person-info">
             <h2>Informações de Pessoais</h2>
             <p>
-              Joe Doe
+              {user.name}
               <br />
-              Av. São Carlos, 2020 - Centro
+              {user.phone}
               <br />
-              01/01/200
+              {user.address}
               <br />
             </p>
           </div>
 
           <div className="order-info">
             <h2>Informações do Pedido</h2>
-            <p>
-              Royal Canin - Adulto - 15kg
-              <br />
-              1x R$ 235,99
-              <br />
-            </p>
+            <div>
+              {state.map((single) => (
+                <div key={single.id}>
+                  <p>
+                    {single.name}
+                    <br />
+                    {single.quantity}x {single.price}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="payment-info">
             <h2>Informações do Pagamento</h2>
             <p>
-              Cartão Nubank
-              <br />
-              Num. xxxx.xxxx.xxxx.2020
-              <br />
-              1x de 235,99
+              Preço total: <strong>R$ {totalPrice}</strong>
             </p>
+            <form onSubmit={handleSubmit}>
+              <Input
+                type="text"
+                required
+                label="Cartão de Crédito"
+                placeholder="xxxx.xxxx.xxxx.xxxx"
+                name="creditCart"
+                id="creditCart"
+                required
+              />
+              <input type="submit" value="Finalizar" />
+            </form>
           </div>
-          <Btn link="/minha-conta">Finalizar</Btn>
           <a href="/carrinho">Voltar ao Carrinho</a>
         </DivBorder>
       </div>

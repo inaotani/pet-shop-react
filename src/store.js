@@ -22,8 +22,20 @@ const StoreProvider = ({ children }) => {
     window.localStorage.setItem("auth", JSON.stringify(login));
   }, [login]);
 
+  const price = window.localStorage.getItem("price")
+    ? JSON.parse(window.localStorage.getItem("price"))
+    : 0;
+  const [totalPrice, setTotalPrice] = useState(price);
+  useEffect(() => {
+    window.localStorage.setItem("price", JSON.stringify(totalPrice));
+  }, [totalPrice]);
+
   return (
-    <Provider value={{ state, setState, login, setLogin }}>{children}</Provider>
+    <Provider
+      value={{ state, setState, login, setLogin, totalPrice, setTotalPrice }}
+    >
+      {children}
+    </Provider>
   );
 };
 

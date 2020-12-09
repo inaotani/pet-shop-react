@@ -13,20 +13,21 @@ const Cart = () => {
   const productInfoContext = useContext(store);
   const setState = productInfoContext.setState;
   const productInfo = productInfoContext.state;
+  const setPrice = productInfoContext.setTotalPrice;
+  const totalPrice = productInfoContext.totalPrice;
   let content;
   const offer = {
     src: banner,
     alt: "oferta",
   };
 
-  const [amount, setAmount] = useState(0);
   useEffect(() => {
     {
       let aux = 0;
       productInfo.map((single, index) => {
         aux = aux + parseFloat(single.price) * single.quantity;
       });
-      setAmount(aux.toFixed(2));
+      setPrice(aux.toFixed(2));
     }
   }, [productInfo]);
 
@@ -38,7 +39,6 @@ const Cart = () => {
           newState.splice(index, 1);
           setState(newState);
         }
-        console.log("excluir");
       });
     }
   }
@@ -50,7 +50,7 @@ const Cart = () => {
       <div>
         <a href="/">Continuar Comprando</a>
         <p className="cart-price">
-          Valor Total: <strong>R$ {amount}</strong>
+          Valor Total: <strong>R$ {totalPrice}</strong>
         </p>
         <Btn link="/checkout">Fechar Pedido</Btn>
       </div>
