@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Pet Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Projeto desenvolvido por:**
+Ingrid Otani, NUSP 10818971
+Gabriel Muniz Morão, NUSP 7236785
+Gabriel Sgarbi Cocenza, NUSP 6448118
+Stella Granatto Justo, NUSP 9558882
 
-## Available Scripts
+O projeto também pode ser visto através do link [criado no vercel](https://pet-shop-react.vercel.app/).
 
-In the project directory, you can run:
+## O Projeto
 
-### `npm start`
+O objetivo deste projeto consiste na criação de um sistema voltado para o funcionamento de um petshop online. Neste projeto serão implementadas as funcionalidades necessárias tanto para o funcionamento do ecommerce do lado do usuário-cliente como do lado do usuário-administrador do sistema.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para melhor organização o backend e o frontend foram desenvolvidos separadamente, neste repositório está os arquivos do fronend, realizando a integração com o backend através de API's.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Como rodar o projeto da parte FrontEnd
 
-### `npm test`
+### Dependências:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [NodeJS](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/) ou [NPM](https://www.npmjs.com/)
 
-### `npm run build`
+### Passo a passo:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Instalar todas as dependências
+- Clonar o repositório git `git clone`
+- Na pasta do projeto instalar os pacotes `yarn install` ou `npm install`
+- Após instalado os pacotes, rodar o projeto `yarn start` ou `npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Como rodar o projeto da parte FrontEnd / Sitemap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Usuário comum:
 
-### `npm run eject`
+**Página inicial** carousel com banner, banner de oferta e lista de todos os produtos.
+**Página de ração** com a lista dos produtos.
+**Página de resultado de busca** com a lista dos produtos a partir de uma busca do usuário.
+**Página do produto** com informações do produto e a opção de adicionar no carrinho.
+**Página do carrinho** com os produtos adicionados e a possibilidade de removê-los. Caso o usuário esteja logado é enviado para a página de endereço de pagamento, caso contrário, para a página de login.
+**Página de pagamento** para o usuário informar as informações do cartão e finalizar a transação. Caso tudo esteja correto, o usuário é enviado para a página da sua conta que possui também histórico de pedido.
+**Página da conta** mostra as informações do usuário logado e histórico de seus pedidos.
+**Página de login** para o usuário e o administrador realizar o acesso.
+**Página de cadastro** para a criação de um novo usuário.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Administador:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Estoque** permitindo a listagem e remoção do produção. com links para edição e adição de produtos .
+**Adição de produto** permitindo a adição de novos produtos.
+**Edição de produto** permitindo a edição de produtos já existentes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Tecnologias
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+No frontend, foi utilizado para desenvolver a aplicação o **ReactJS** e três packages específicas: **Font Size Changer** para auxiliar na acessibilidade e o usuário conseguir alterar o tamanho das fontes ,**React Router** para a criação das páginas e **File Base 64** para conversão de imagem em código na base 64.
 
-## Learn More
+As informações do carrinho e se o usuário está logado são armazenados em **LocalStorage**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Testes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para a testar as telas e funcionalidades, realizamos rodadas de QA entre os integrantes para verificação visual e de códigos a cada componente e página criada. A documentação dos testes pode ser verificado neste [documento de QA](https://docs.google.com/spreadsheets/d/1InLoyNTysLR2WNzLSeoBc58Ca3gsP2v68KHAvRJx5_k/edit?usp=sharing).
 
-### Code Splitting
+## Problemas encontrados ao longo de projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Encontramos problemas para juntar os códigos e resolver os conflitos gerados. Sendo assim, resolvemos centralizar o envio dos códigos para apenas um dos membros do grupo mais experiente no uso de React, que fez a junção dos elementos de forma padronizada e subiu a aplicação no Github.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Além disso, tivemos dificuldades para alinhamento do backend e frontend, já que ambos foram desenvolvidos em paralelo, resolvemos se comunicando constantemente e documentação dos campos para as request.
