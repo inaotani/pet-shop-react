@@ -27,7 +27,7 @@ const ProductDisplay = ({ product }) => {
       <div className="product-hero">
         <img
           className="product-img"
-          src={"data:image/png;base64," + product.photo}
+          src={product.photo}
           alt={product.name}
         />
         <div className="wrap">
