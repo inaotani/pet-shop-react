@@ -13,9 +13,7 @@ const Homepage = () => {
 
   useEffect(() => {
     async function getProducts() {
-      const response = await fetch(
-        "https://petshop-backend.vercel.app/api/supply"
-      );
+      const response = await fetch("http://localhost:3001/products");
       const data = await response.json();
       setProducts(data);
     }

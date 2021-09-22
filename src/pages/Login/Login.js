@@ -21,41 +21,20 @@ const Login = () => {
         history.push("/minha-conta");
       }
     }
-  }, []);
-
-  function isAdmin(token) {
-    const parts = token.split(".");
-    const user = JSON.parse(atob(parts[1]));
-    if (user.admin) {
-      setLogin({ status: true, admin: true, auth: token });
-      history.push("/estoque");
-    } else {
-      setLogin({ status: true, admin: false, auth: token });
-      history.push("/minha-conta");
-    }
-    console.log(token);
-  }
+  }, [history, login, state]);
 
   async function postLogin(user) {
-    const url = "https://petshop-backend.vercel.app/api/login";
-
-    const requestOption = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: user,
+    const response = {
+      status: 200,
     };
 
-    const response = await fetch(url, requestOption).then((response) => {
-      if (response.status === 200) {
-        setStatus(0);
-        isAdmin(response.headers.get("Authorization"));
-      } else {
-        setStatus(1);
-      }
-    });
+    if (response.status === 200) {
+      setStatus(0);
+    } else {
+      setStatus(1);
+    }
+
+    setLogin({ status: true, admin: false });
   }
 
   function handleSubmit(e) {
@@ -95,7 +74,6 @@ const Login = () => {
               E-mail e/ou senha inválido
             </p>
             <input type="submit" placeholder="senha" value="Entrar" />
-            <Btn link="cadastra-se">Cadastrar-se</Btn>
           </form>
         </DivBorder>
       </div>

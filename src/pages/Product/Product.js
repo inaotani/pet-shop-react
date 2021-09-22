@@ -11,9 +11,7 @@ const Product = () => {
 
   useEffect(() => {
     async function getProduct() {
-      const response = await fetch(
-        `https://petshop-backend.vercel.app/api/product/${id}`
-      );
+      const response = await fetch(`http://localhost:3001/products/${id}`);
       const data = await response.json();
       setProduct(data);
     }

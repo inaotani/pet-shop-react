@@ -25,6 +25,11 @@
   margin-bottom: 20px;
 }
 
+.my-account .logout-link {
+  cursor: pointer;
+  display: inline-block;
+}
+
 @media (min-width: 1024px) {
   .my-account {
     padding-bottom: 100px;

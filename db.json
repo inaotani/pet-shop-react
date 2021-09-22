@@ -1,0 +1,91 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Ração Seca PremieR Pet Golden",
+      "price": "149,99",
+      "description": "A Ração Seca PremieR Pet Golden Formula Carne e Arroz para Cães Adultos de Raças Pequenas é um alimento Premium Especial desenvolvido para cães adultos de pequeno porte. Os cães são essencialmente carnívoros e digerem muito melhor os alimentos de origem animal. Apresenta grãos adequados para animais de pequeno porte, facilitando a mastigação. É um produto completo e visa, acima de tudo, proporcionar aos cães, o nível ideal de todos os nutrientes que eles necessitam para uma vida longa e saudável.",
+      "photo": "https://www.petlove.com.br/images/products/210674/large/Ra%C3%A7%C3%A3o_Golden_Formula_Carne_e_Arroz_para_C%C3%A3es_Adultos_de_Ra%C3%A7as_Pequenas_-_15_Kg_1210471.jpg?1627675569"
+    },
+    {
+      "id": 2,
+      "name": "Ração Premier Pet Gourmet Sachê Frango para Cães Adultos",
+      "price": "6,74",
+      "description": "A Ração Premier Pet Gourmet Sachê Frango para Cães Adultos é um alimento Super Premium que faz parte da linha PremieR Gourmet, uma linha de alimentos úmidos especialmente desenvolvida para retribuir todo amor e carinho que os cães nos proporcionam. Alem disto, é nobre, nutritivo e natural, pois não contém corantes e aromatizantes artificiais, conservantes e nem ingredientes transgênicos. Feito com peito de frango e arroz integral, é rico em proteínas, contém um molho de sabor incomparável e tem a vantagem de conter baixas calorias, promovendo uma refeição deliciosa e naturalmente saudável.",
+      "photo": "https://www.petlove.com.br/images/products/215311/product/Ra%C3%A7%C3%A3o_Premier_Pet_Gourmet_Sach%C3%AA_Frango_para_C%C3%A3es_Adultos_1577476.jpg?1627691415"
+    },
+    {
+      "id": 3,
+      "name": "Ração Seca PremieR Pet Golden Salmão para Gatos Adultos Castrados",
+      "price": "23,31",
+      "description": "Procedimento cada vez mais recomendado pelos médicos veterinários, a castração promove inúmeros benefícios, mas também alterações fisiológicas que exigem alguns cuidados extras com a dieta do seu gato. Especialmente formulada para atender às necessidades dos gatos castrados, a Ração Seca PremieR Pet Golden Salmão para Gatos Adultos Castrados auxilia na prevenção da obesidade e no cuidado com o trato urinário, garantindo uma nutrição ótima e saudável.",
+      "photo": "https://www.petlove.com.br/images/products/213111/product/Ra%C3%A7%C3%A3o_Golden_Gatos_Adultos_Castrados_Salm%C3%A3o_31022435_1kg.jpg?1627684400"
+    },
+    {
+      "id": 4,
+      "name": "Ração Seca PremieR Pet Golden Special Cães Adultos Frango e Carne",
+      "price": "119,61",
+      "description": "A Ração Seca PremieR Pet Golden Special Cães Adultos Frango e Carne é um alimento completo e balanceado que proporciona aos cães adultos o nível ideal de todos os ingredientes que eles necessitam para uma vida longa e saudável. Golden Special utiliza somente proteína de origem animal, para cães mais fortes e saudáveis, sendo indicado para cães adultos de todas as raças.",
+      "photo": "https://www.petlove.com.br/images/products/210723/product/Ra%C3%A7%C3%A3o_Premier_Golden_Special_C%C3%A3es_Adultos_Frango_e_Carne_-_15_Kg_1213490_2.jpg?1627675740"
+    },
+
+    {
+      "id": 5,
+      "name": "Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos",
+      "price": "103,41",
+      "description": "A Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos traz nutrição de alta qualidade pelo melhor custo beneficio. Desenvolvido por veterinários a partir de ingredientes selecionados, sem corantes e aromatizantes artificiais, a Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos garante uma alimentação balanceada e sabor irresistível.",
+      "photo": "https://www.petlove.com.br/images/products/237058/product/Ra%C3%A7%C3%A3o_Seca_Nutrilus_Pro_Frango___Carne_para_C%C3%A3es_Adultos_2492301_15kg.jpg?1627761153"
+    },
+    {
+      "id": 6,
+      "name": "Ração Seca Kirkland Gatos",
+      "price": "198,90",
+      "description": "Kirkland Signature super Premium comida para gato está diseñada especialmente para cubrir todas las necesidades alimenticias de su gato.",
+      "photo": "https://www.costco.com.mx/medias/sys_master/products/he5/h17/13762678784030.jpg"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Joe Doe",
+      "phone": "(16) 99797-7070",
+      "address": "Av. São Carlos, 2021 - Centro, São Carlos / SP"
+    }
+  ],
+  "sells": [
+    {
+      "id": 1,
+      "date": "23/12/2020",
+      "totalPrice": "354,95",
+      "creditCard": "Back xxxx.0780.xxx",
+      "bill": [
+        {
+          "id": 1,
+          "name": "Ração Seca PremieR Pet Golden",
+          "price": "149,99",
+          "quantity": 2
+        },
+        {
+          "id": 1,
+          "name": "Ração Seca PremieR Pet Golden",
+          "price": "149,99",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "date": "23/12/2020",
+      "totalPrice": "354,95",
+      "creditCard": "Back xxxx.0780.xxx",
+      "bill": [
+        {
+          "id": 1,
+          "name": "Ração Seca PremieR Pet Golden",
+          "price": "149,99",
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}

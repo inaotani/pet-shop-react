@@ -57,9 +57,6 @@ const Header = ({ menuList }) => {
           </div>
           <FontSizeChanger
             targets={["#target", "#target2"]}
-            onChange={(element, newValue, oldValue) => {
-              console.log(element, newValue, oldValue);
-            }}
             options={{
               stepSize: 2,
               range: 4,

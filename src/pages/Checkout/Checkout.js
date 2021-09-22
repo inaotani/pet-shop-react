@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
 import Layout from "../../components/Layout";
-import Btn from "../../components/Btn";
 import DivBorder from "../../components/DivBorder";
 import { useHistory } from "react-router-dom";
 import { store } from "../../store";
@@ -18,13 +17,10 @@ const Checkout = () => {
     async function getUser() {
       const requestOption = {
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${login.auth}`,
-        },
       };
 
       const response = await fetch(
-        "https://petshop-backend.vercel.app/api/user",
+        "http://localhost:3001/user/1",
         requestOption
       );
       const data = await response.json();
@@ -32,48 +28,21 @@ const Checkout = () => {
     }
 
     getUser();
-  }, []);
+  }, [history, login.status]);
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    const products = state.map((single) => ({
-      productId: single.id,
-      name: single.name,
-      quantity: single.quantity,
-      price: single.price,
-    }));
-
-    console.log(products);
-
-    const json = JSON.stringify({
-      bill: products,
-      creditCard: e.target.creditCart.value,
-      totalPrice: totalPrice,
-    });
-
     async function addSell() {
-      const url = `https://petshop-backend.vercel.app/api/sell`;
+      const response = 200;
 
-      const requestOption = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Bearer ${login.auth}`,
-        },
-        body: json,
-      };
-
-      const response = await fetch(url, requestOption).then((response) => {
-        if (response.status === 200) {
-          setState([]);
-          setTotalPrice(0);
-          history.push("/minha-conta");
-        } else {
-          alert("Error ao cadastrar");
-        }
-      });
+      if (response === 200) {
+        setState([]);
+        setTotalPrice(0);
+        history.push("/minha-conta");
+      } else {
+        alert("Error ao cadastrar");
+      }
     }
     addSell();
   }

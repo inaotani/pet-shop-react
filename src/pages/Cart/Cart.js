@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import "./../../index.css";
 import Layout from "../../components/Layout";
 import InlineCard from "../../components/InlineCard";
@@ -22,28 +22,23 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    {
-      let aux = 0;
-      productInfo.map((single, index) => {
-        aux = aux + parseFloat(single.price) * single.quantity;
-      });
-      setPrice(aux.toFixed(2));
-    }
-  }, [productInfo]);
+    let aux = 0;
+    productInfo.map(
+      (single) => (aux = aux + parseFloat(single.price) * single.quantity)
+    );
+    setPrice(aux.toFixed(2));
+  }, [productInfo, setPrice]);
 
   function handleExclue(id) {
     const newState = [...productInfo];
-    {
-      newState.map((single, index) => {
-        if (single.id === id) {
-          newState.splice(index, 1);
-          setState(newState);
-        }
-      });
-    }
-  }
 
-  console.log(productInfo);
+    newState.map((single, index) => {
+      if (single.id === id) {
+        newState.splice(index, 1);
+        setState(newState);
+      }
+    });
+  }
 
   function hasItem() {
     return (
@@ -81,7 +76,7 @@ const Cart = () => {
             return (
               <InlineCard key={index} card={single}>
                 <div onClick={() => handleExclue(single.id)}>
-                  <a href="#">Excluir</a>
+                  <span className="remove-item">Excluir</span>
                 </div>
               </InlineCard>
             );

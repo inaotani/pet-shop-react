@@ -17,35 +17,20 @@ const MyAccount = () => {
     if (!login.status) history.push("/login");
 
     async function getUser() {
-      const requestOption = {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${login.auth}`,
-        },
-      };
-
-      try {
-        const [data1, data2] = await Promise.all([
-          fetch(
-            "https://petshop-backend.vercel.app/api/user",
-            requestOption
-          ).then((value) => value.json()),
-          fetch(
-            "https://petshop-backend.vercel.app/api/sell",
-            requestOption
-          ).then((value) => value.json()),
-        ]).then((value) => {
-          setUserInfo(value[0]);
-          setHistoric(value[1]);
-        });
-      } catch (err) {
-        console.log(err);
-      }
+      const response = await fetch("http://localhost:3001/user/1");
+      const data = await response.json();
+      setUserInfo(data);
     }
-    getUser();
-  }, []);
 
-  useEffect(() => {}, []);
+    async function getSell() {
+      const response = await fetch("http://localhost:3001/sells");
+      const data = await response.json();
+      setHistoric(data);
+    }
+
+    getUser();
+    getSell();
+  }, [history, login.status]);
 
   function handleLogout() {
     setLogin({ status: false, admin: false, auth: "" });
@@ -71,43 +56,43 @@ const MyAccount = () => {
             </p>
           </div>
           <div className="order-info">
-            <p>
-              <h2>
-                {historic.length > 0
-                  ? "Histórico de Pedidos"
-                  : "Nenhum pedido realizado"}
-              </h2>
-            </p>
-            {historic.map((single) => (
-              <div>
-                <p>
-                  <strong>ID: {single._id}</strong>
-                  <br />
-                  Data: {Moment(single.date).format("DD/MM/YYYY")}
-                  <br />
-                  Preço total: {single.totalPrice}
-                  <br />
-                  Cartão: {single.creditCard}
-                </p>
+            <h2>
+              {historic.length > 0
+                ? "Histórico de Pedidos"
+                : "Nenhum pedido realizado"}
+            </h2>
+
+            {historic.length > 0 &&
+              historic.map((single) => (
                 <div>
-                  <strong>Produtos:</strong>
+                  <p>
+                    <strong>ID: {single.id}</strong>
+                    <br />
+                    Data: {Moment(single.date).format("DD/MM/YYYY")}
+                    <br />
+                    Preço total: {single.totalPrice}
+                    <br />
+                    Cartão: {single.creditCard}
+                  </p>
                   <div>
-                    {single.bill.map((b) => (
-                      <div>
-                        <Link to={`/p/${b._id}`}>{b.name}</Link>
-                        <br />
-                        {b.quantity}x{b.price}
-                      </div>
-                    ))}
+                    <strong>Produtos:</strong>
+                    <div>
+                      {single.bill.map((b) => (
+                        <div>
+                          <Link to={`/p/${b.id}`}>{b.name}</Link>
+                          <br />
+                          {b.quantity}x{b.price}
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                  <hr />
                 </div>
-                <hr />
-              </div>
-            ))}
+              ))}
           </div>
-          <a href="#" onClick={handleLogout}>
+          <div className="logout-link" onClick={handleLogout}>
             <strong>Sair</strong>
-          </a>
+          </div>
         </DivBorder>
       </div>
     </Layout>

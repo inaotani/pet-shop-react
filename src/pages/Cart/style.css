@@ -1,23 +1,27 @@
 .cart-page {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .cart-page h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .cart-page .inline-card {
-    max-width: 500px;
-    margin: 0 auto 50px;
+  max-width: 500px;
+  margin: 0 auto 50px;
 }
 
 .cart-page .cart-info {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .cart-page .cart-price,
 .cart-page .cart-price strong {
-    font-size: 1.25rem;
-} 
+  font-size: 1.25rem;
+}
 
+.cart-page .remove-item {
+  text-decoration: underline;
+  cursor: pointer;
+}
