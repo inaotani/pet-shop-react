@@ -15,7 +15,7 @@ npm install
 ```bash
 npm run server
 ```
-
+- Com o server rodando
 - Rodar o projeto
 
 ```bash
