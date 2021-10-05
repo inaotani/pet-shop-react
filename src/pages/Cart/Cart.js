@@ -47,7 +47,7 @@ const Cart = () => {
         <p className="cart-price">
           Valor Total: <strong>R$ {totalPrice}</strong>
         </p>
-        <Btn link="/checkout">Fechar Pedido</Btn>
+        <Btn link="/minha-conta">Fechar Pedido</Btn>
       </div>
     );
   }
