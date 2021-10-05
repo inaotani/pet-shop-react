@@ -2,26 +2,18 @@ import React, { useState, useContext } from "react";
 import "./style.css";
 import menuIcon from "./../../assets/icons/menu-icon.svg";
 import cartIcon from "./../../assets/icons/cart.svg";
-import closeIcon from "./../../assets/icons/close.png";
 import FontSizeChanger from "react-font-size-changer";
 import Logo from "./../../assets/imgs/logo.png";
-import searchWhiteIcon from "../../assets/icons/search-white.png";
-import Search from "../Search";
 import { Link } from "react-router-dom";
 import { store } from "../../store";
 
 const Header = ({ menuList }) => {
   const [menuOpen, setmenuOpen] = useState(false);
-  const [searchOpen, setsearchOpen] = useState(false);
   const productInfoContext = useContext(store);
   const productQtde = productInfoContext.state.length;
 
   function openMenu() {
     setmenuOpen(!menuOpen);
-  }
-
-  function openSearch() {
-    setsearchOpen(!searchOpen);
   }
 
   return (
@@ -49,12 +41,6 @@ const Header = ({ menuList }) => {
         </Link>
 
         <div className="right">
-          <div className="header-search" onClick={openSearch}>
-            <img
-              src={searchOpen ? closeIcon : searchWhiteIcon}
-              alt="Ícone de pesquisa"
-            />
-          </div>
           <FontSizeChanger
             targets={["#target", "#target2"]}
             options={{
@@ -84,9 +70,6 @@ const Header = ({ menuList }) => {
             <div className="cart-qtde">{productQtde}</div>
           </a>
         </div>
-      </div>
-      <div className={searchOpen ? "search open" : "search"}>
-        <Search />
       </div>
     </header>
   );
