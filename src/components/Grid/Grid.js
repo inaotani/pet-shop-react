@@ -15,6 +15,7 @@ const Grid = ({ title, products }) => {
               price: single.price,
               img: single.photo,
               link: `/p/${single.id}`,
+              alt: single.alt,
             }}
           />
         ))}

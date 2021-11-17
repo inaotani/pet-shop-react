@@ -43,7 +43,7 @@ const ProductDisplay = ({ product }) => {
           />
           <div onClick={handleBuy}>
             <Btn link="/carrinho">
-              <img src={cartIcon} />
+              <img src={cartIcon} alt="carrinho de compras"/>
               Adicionar ao carrinho
             </Btn>
           </div>

@@ -66,7 +66,7 @@ const Header = ({ menuList }) => {
             className={productQtde > 0 ? "cart-icon" : "cart-icon hidden"}
             href="/carrinho"
           >
-            <img className="icon" src={cartIcon} />
+            <img className="icon" src={cartIcon} alt="carrinho de compras"/>
             <div className="cart-qtde">{productQtde}</div>
           </a>
         </div>
