@@ -1,23 +1,27 @@
 .hero {
-    padding: 0 0 10px;
-    position: relative;
-    background-color: #8643f3;
-    text-align: center;
+  padding: 0 0 10px;
+  position: relative;
+  background-color: #8643f3;
+  text-align: center;
 }
 
 .hero .carousel-next:before,
 .hero .carousel-prev:before {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAzbDMuMDU3LTMgMTEuOTQzIDEyLTExLjk0MyAxMi0zLjA1Ny0zIDktOXoiLz48L3N2Zz4=);
-    padding: 5px;
-    background-color: rgba(225,225,225, 0.8);
-    border-radius: 50%;
-    background-size: 20px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAzbDMuMDU3LTMgMTEuOTQzIDEyLTExLjk0MyAxMi0zLjA1Ny0zIDktOXoiLz48L3N2Zz4=);
+  padding: 5px;
+  background-color: rgba(225, 225, 225, 0.8);
+  border-radius: 50%;
+  background-size: 20px;
 }
 
 .hero .carousel-prev {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .hero .carousel-dots li.carousel-dots-active button:before {
-    color: white;
+  color: white;
+}
+
+.hero .vw-text {
+  display: none;
 }

@@ -9,3 +9,7 @@
   text-decoration: none;
   display: inline-block;
 }
+
+.product-btn .vw-text {
+  color: #fff;
+}

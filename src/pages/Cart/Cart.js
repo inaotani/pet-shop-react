@@ -29,9 +29,10 @@ const Cart = () => {
     setPrice(aux.toFixed(2));
   }, [productInfo, setPrice]);
 
-  function handleExclue(id) {
+  function handleExclude(id) {
     const newState = [...productInfo];
 
+    // eslint-disable-next-line array-callback-return
     newState.map((single, index) => {
       if (single.id === id) {
         newState.splice(index, 1);
@@ -75,7 +76,7 @@ const Cart = () => {
           {productInfo.map((single, index) => {
             return (
               <InlineCard key={index} card={single}>
-                <div onClick={() => handleExclue(single.id)}>
+                <div onClick={() => handleExclude(single.id)}>
                   <span className="remove-item">Excluir</span>
                 </div>
               </InlineCard>

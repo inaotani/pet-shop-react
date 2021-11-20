@@ -9,6 +9,10 @@
   margin: 0;
 }
 
+#footer .vw-text {
+  color: #fff;
+}
+
 #footer img {
   max-height: 15px;
   margin: 0 2px;

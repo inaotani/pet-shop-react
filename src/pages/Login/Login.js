@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import Layout from "./../../components/Layout";
 import Input from "./../../components/Input";
-import Btn from "./../../components/Btn";
 import DivBorder from "../../components/DivBorder";
 import { store } from "../../store";
 import "./style.css";
@@ -15,11 +14,7 @@ const Login = () => {
 
   useEffect(() => {
     if (login.status) {
-      if (state) {
-        history.push("/checkout");
-      } else {
-        history.push("/minha-conta");
-      }
+      history.push("/minha-conta");
     }
   }, [history, login, state]);
 
@@ -52,7 +47,7 @@ const Login = () => {
     <Layout>
       <div className="container form">
         <DivBorder>
-          <h1>Login</h1>
+          <h1 lang="en-US">Login</h1>
           <form id="login-form" method="POST" onSubmit={handleSubmit}>
             <Input
               type="text"
