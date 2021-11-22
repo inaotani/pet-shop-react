@@ -6,7 +6,7 @@ import Footer from "./../Footer";
 import { store } from "../../store";
 
 const Layout = ({ children }) => {
-  const parentRef = useArrowKeyNavigationHook({ selectors: "a,button,input" });
+  const parentRef = useArrowKeyNavigationHook({ selectors: "a,button,input,span" });
 
   const globalLogin = useContext(store);
   const { login } = globalLogin;

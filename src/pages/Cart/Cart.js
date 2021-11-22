@@ -77,7 +77,7 @@ const Cart = () => {
             return (
               <InlineCard key={index} card={single}>
                 <div onClick={() => handleExclude(single.id)}>
-                  <span className="remove-item">Excluir</span>
+                  <span tabindex="0" className="remove-item">Excluir</span>
                 </div>
               </InlineCard>
             );

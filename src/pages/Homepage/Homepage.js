@@ -11,7 +11,7 @@ import "./styles.css";
 
 const Homepage = () => {
   const [products, setProducts] = useState([]);
-  const parentRef = useArrowKeyNavigationHook({ selectors: "a,button,input" });
+  const parentRef = useArrowKeyNavigationHook({ selectors: "a,button,input,span" });
 
   useEffect(() => {
     async function getProducts() {

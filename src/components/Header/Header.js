@@ -48,8 +48,8 @@ const Header = ({ menuList }) => {
               range: 4,
             }}
             customButtons={{
-              up: <span style={{ fontSize: "25px" }}>A</span>,
-              down: <span style={{ fontSize: "14px" }}>A</span>,
+              up: <span tabindex="0" style={{ fontSize: "25px" }}>A</span>,
+              down: <span tabindex="0" style={{ fontSize: "14px" }}>A</span>,
               style: {
                 backgroundColor: "white",
                 color: "#8643f3",
