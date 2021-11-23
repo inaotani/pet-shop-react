@@ -5,7 +5,7 @@ import Btn from "../Btn";
 const Card = ({ card }) => {
   return (
     <div className="product">
-      <img className="product-img" src={card.img} alt={card.alt}/>
+      <img role="img" className="product-img" src={card.img} alt={card.alt}/>
       <div className="product-info">
         <h3 className="product-name">{card.title}</h3>
         <p className="product-price">R$ {card.price}</p>

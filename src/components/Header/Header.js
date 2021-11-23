@@ -19,17 +19,18 @@ const Header = ({ menuList }) => {
   return (
     <header id="header">
       <div className="container">
-        <nav id="nav-menu" className={menuOpen ? "open" : ""}>
+        <nav role="navigation" id="nav-menu" className={menuOpen ? "open" : ""}>
           <ul id="target2">
             {menuList.map((menuItem, index) => (
-              <li key={index}>
-                <a href={menuItem.link}>{menuItem.text}</a>
+              <li role="menuitem" key={index}>
+                <a role="link" href={menuItem.link}>{menuItem.text}</a>
               </li>
             ))}
           </ul>
         </nav>
 
         <img
+          role="menu"
           className="icon"
           src={menuIcon}
           alt="Menu hamburguer"
@@ -37,7 +38,7 @@ const Header = ({ menuList }) => {
         />
 
         <Link to="/" className="site-title">
-          <img src={Logo} alt="logo do pet shop" />
+          <img role="img" src={Logo} alt="logo do pet shop" />
         </Link>
 
         <div className="right">
@@ -62,11 +63,11 @@ const Header = ({ menuList }) => {
               buttonsMargin: 5,
             }}
           />
-          <a
+          <a role="link"
             className={productQtde > 0 ? "cart-icon" : "cart-icon hidden"}
             href="/carrinho"
           >
-            <img className="icon" src={cartIcon} alt="carrinho de compras" />
+            <img role="img" className="icon" src={cartIcon} alt="carrinho de compras" />
             <div className="cart-qtde">{productQtde}</div>
           </a>
         </div>

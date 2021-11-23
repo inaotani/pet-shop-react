@@ -7,7 +7,7 @@ const Hero = ({banners}) => {
             <Slider dots>
                 {banners.map((banner, index) =>
                 <div key={index}>
-                    <img src={banner.src} alt={banner.alt} />
+                    <img role="img" src={banner.src} alt={banner.alt} />
                 </div>
             )}
             </Slider>

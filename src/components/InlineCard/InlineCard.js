@@ -5,10 +5,10 @@ import Input from "./../Input";
 const InlineCard = ({ card, children }) => {
   return (
     <div className="inline-card">
-      <img className="product-img" src={card.photo} alt={card.alt} />
+      <img role="img" className="product-img" src={card.photo} alt={card.alt} />
       <div className="product-info">
         <h3 className="product-name">
-          <a href={`/p/${card.id}`}>{card.name}</a>
+          <a role="link" href={`/p/${card.id}`}>{card.name}</a>
         </h3>
         <div>
           <p className="product-price">R$ {card.price}</p>

@@ -6,7 +6,7 @@ const Grid = ({ title, products }) => {
   return (
     <div>
       <h2>{title}</h2>
-      <div className="product-grid container">
+      <div className="product-grid container" role="grid">
         {products.map((single, index) => (
           <Card
             key={index}

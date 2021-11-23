@@ -25,7 +25,7 @@ const ProductDisplay = ({ product }) => {
     <div className="product-display">
       <h1>{product.name}</h1>
       <div className="product-hero">
-        <img
+        <img role="img"
           className="product-img"
           src={product.photo}
           alt={product.name}
@@ -43,7 +43,7 @@ const ProductDisplay = ({ product }) => {
           />
           <div onClick={handleBuy}>
             <Btn link="/carrinho">
-              <img src={cartIcon} alt="carrinho de compras"/>
+              <img role="img" src={cartIcon} alt="carrinho de compras"/>
               Adicionar ao carrinho
             </Btn>
           </div>

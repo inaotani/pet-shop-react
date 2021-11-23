@@ -44,7 +44,7 @@ const Cart = () => {
   function hasItem() {
     return (
       <div>
-        <a href="/">Continuar Comprando</a>
+        <a role="link" href="/">Continuar Comprando</a>
         <p className="cart-price">
           Valor Total: <strong>R$ {totalPrice}</strong>
         </p>

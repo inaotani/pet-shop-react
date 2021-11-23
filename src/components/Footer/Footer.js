@@ -3,7 +3,7 @@ import "./style.css";
 
 const Footer = () => {
   return (
-    <footer id="footer">
+    <footer role="contentinfo" id="footer">
       <p lang="en-US">Copyright © 2021 Pet Shop</p>
     </footer>
   );

@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
     <div ref={parentRef}>
       <Header menuList={login.admin ? menuAdmin : menuUser} />
 
-      <main id="target">{children}</main>
+      <main role="main" id="target">{children}</main>
       <Footer />
     </div>
   );
