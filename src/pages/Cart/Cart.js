@@ -18,7 +18,7 @@ const Cart = () => {
   let content;
   const offer = {
     src: banner,
-    alt: "oferta",
+    alt: "Logotipo da Kirkland Signature em destaque, ao lado três pacotes de ração de gato da marca",
   };
 
   useEffect(() => {

@@ -26,12 +26,12 @@ const Homepage = () => {
     <Layout ref={parentRef}>
       <Hero
         banners={[
-          { src: banner1, alt: "Banner de oferta 1" },
-          { src: banner2, alt: "Banner de oferta 2" },
+          { src: banner1, alt: "Imagem de um cachorro. Ao lado está escrito: Seu Pet precisa, a gente tem, confira nossos produtos" },
+          { src: banner2, alt: "Imagem de um cachorro deitado na grama ao lado de dois sacos de ração" },
         ]}
       />
       <BannerOffer
-        banner={{ src: bannerOffer, alt: "Banner de oferta" }}
+        banner={{ src: bannerOffer, alt: "Logotipo da Kirkland Signature em destaque, ao lado três pacotes de ração de gato da marca" }}
         title="Oferta do Dia"
       />
       <Grid title="Nossos Produtos" products={products} />
