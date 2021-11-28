@@ -30,9 +30,20 @@ const StoreProvider = ({ children }) => {
     window.localStorage.setItem("price", JSON.stringify(totalPrice));
   }, [totalPrice]);
 
+  const [contrast, setContrast] = useState(false);
+
   return (
     <Provider
-      value={{ state, setState, login, setLogin, totalPrice, setTotalPrice }}
+      value={{
+        state,
+        setState,
+        login,
+        setLogin,
+        totalPrice,
+        setTotalPrice,
+        contrast,
+        setContrast,
+      }}
     >
       {children}
     </Provider>

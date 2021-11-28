@@ -6,10 +6,12 @@ import Footer from "./../Footer";
 import { store } from "../../store";
 
 const Layout = ({ children }) => {
-  const parentRef = useArrowKeyNavigationHook({ selectors: "a,button,input,span" });
+  const parentRef = useArrowKeyNavigationHook({
+    selectors: "a,button,input,span",
+  });
 
   const globalLogin = useContext(store);
-  const { login } = globalLogin;
+  const { login, contrast } = globalLogin;
   const menuUser = [
     { link: "/", text: "Página Inicial" },
     { link: "/racoes", text: "Rações" },
@@ -23,10 +25,12 @@ const Layout = ({ children }) => {
     { link: "/estoque", text: "Estoque" },
   ];
   return (
-    <div ref={parentRef}>
+    <div ref={parentRef} className={contrast ? "contrastMode" : ""}>
       <Header menuList={login.admin ? menuAdmin : menuUser} />
 
-      <main role="main" id="target">{children}</main>
+      <main role="main" id="target">
+        {children}
+      </main>
       <Footer />
     </div>
   );

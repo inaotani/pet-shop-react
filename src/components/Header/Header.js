@@ -4,6 +4,7 @@ import menuIcon from "./../../assets/icons/menu-icon.svg";
 import cartIcon from "./../../assets/icons/cart.svg";
 import FontSizeChanger from "react-font-size-changer";
 import Logo from "./../../assets/imgs/logo.png";
+import Contrast from "./../../assets/icons/contrast.svg";
 import { Link } from "react-router-dom";
 import { store } from "../../store";
 
@@ -11,6 +12,8 @@ const Header = ({ menuList }) => {
   const [menuOpen, setmenuOpen] = useState(false);
   const productInfoContext = useContext(store);
   const productQtde = productInfoContext.state.length;
+  const setContrast = productInfoContext.setContrast;
+  const contrast = productInfoContext.contrast;
 
   function openMenu() {
     setmenuOpen(!menuOpen);
@@ -23,7 +26,9 @@ const Header = ({ menuList }) => {
           <ul id="target2">
             {menuList.map((menuItem, index) => (
               <li role="menuitem" key={index}>
-                <a role="link" href={menuItem.link}>{menuItem.text}</a>
+                <a role="link" href={menuItem.link}>
+                  {menuItem.text}
+                </a>
               </li>
             ))}
           </ul>
@@ -42,6 +47,13 @@ const Header = ({ menuList }) => {
         </Link>
 
         <div className="right">
+          <img
+            role="img"
+            className="contrast"
+            src={Contrast}
+            alt="botão de contraste"
+            onClick={() => setContrast(!contrast)}
+          />
           <FontSizeChanger
             targets={["#target", "#target2"]}
             options={{
@@ -49,8 +61,16 @@ const Header = ({ menuList }) => {
               range: 4,
             }}
             customButtons={{
-              up: <span tabindex="0" style={{ fontSize: "25px" }}>A</span>,
-              down: <span tabindex="0" style={{ fontSize: "14px" }}>A</span>,
+              up: (
+                <span tabindex="0" style={{ fontSize: "25px" }}>
+                  A
+                </span>
+              ),
+              down: (
+                <span tabindex="0" style={{ fontSize: "14px" }}>
+                  A
+                </span>
+              ),
               style: {
                 backgroundColor: "white",
                 color: "#8643f3",
@@ -63,11 +83,17 @@ const Header = ({ menuList }) => {
               buttonsMargin: 5,
             }}
           />
-          <a role="link"
+          <a
+            role="link"
             className={productQtde > 0 ? "cart-icon" : "cart-icon hidden"}
             href="/carrinho"
           >
-            <img role="img" className="icon" src={cartIcon} alt="carrinho de compras" />
+            <img
+              role="img"
+              className="icon"
+              src={cartIcon}
+              alt="carrinho de compras"
+            />
             <div className="cart-qtde">{productQtde}</div>
           </a>
         </div>

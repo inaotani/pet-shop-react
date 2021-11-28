@@ -103,6 +103,11 @@
   line-height: 0.8;
 }
 
+#header .contrast {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 @media (min-width: 720px) {
   #header div > .icon {
     display: none;

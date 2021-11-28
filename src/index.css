@@ -229,3 +229,7 @@ input[type="submit"] {
 .vw-text {
   font-size: inherit;
 }
+
+.contrastMode {
+  filter: grayscale(1);
+}
